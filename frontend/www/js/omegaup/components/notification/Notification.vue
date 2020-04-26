@@ -50,6 +50,8 @@ export default class Notification extends Vue {
         } else {
           return '/media/warning.svg';
         }
+      case 'general_notification':
+        return '/media/email.svg';
       default:
         return 'media/info.png';
     }
@@ -63,6 +65,8 @@ export default class Notification extends Vue {
         });
       case 'demotion':
         return this.notification.contents.message || '';
+      case 'general_notification':
+        return this.notification.contents.message;
       default:
         return '';
     }
